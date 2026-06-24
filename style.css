@@ -1,0 +1,64 @@
+/* Hide default cursor */
+body {
+    cursor: none;
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+/* Fluid Canvas */
+#fluid-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.8;
+    pointer-events: auto;
+}
+
+/* --- Custom Cursor Styles --- */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: difference; /* Inverts color on white text */
+}
+
+.cursor-outline {
+    width: 20px;
+    height: 20px;
+    /* REMOVED background-color to stop the "gray" fill */
+    background-color: transparent; 
+    border: 1.5px solid white; /* Just a clean white ring */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    pointer-events: none;
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+    mix-blend-mode: difference;
+}
+
+/* Typography Utility */
+.typo-header {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* Selection color */
+::selection {
+    background: #ffffff;
+    color: #000000;
+}

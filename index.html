@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnav | Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        header: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        bgDark: '#0a0a0a',
+                        textLight: '#ffffff',
+                        accentGray: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bgDark text-textLight relative overflow-x-hidden selection:bg-white selection:text-black">
+    
+    <div id="loader" class="fixed inset-0 z-[10000] bg-bgDark flex flex-col items-center justify-center transition-opacity duration-700 ease-out">
+        <h1 class="typo-header text-6xl md:text-8xl animate-pulse">ARNAV</h1>
+        <div class="mt-4 text-sm font-mono opacity-50" id="loader-percent">0%</div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <canvas id="fluid-canvas"></canvas>
+
+    <header class="fixed w-full top-0 z-50 px-6 py-8 transition-all duration-300 backdrop-blur-md bg-bgDark/30 border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-start uppercase text-xs md:text-sm font-medium tracking-wider">
+            <div class="hidden md:block">
+                <p class="opacity-60 mb-1">Based In</p>
+                <p>New Delhi, India</p>
+            </div>
+            <div>
+                <p class="opacity-60 mb-1">Say Hello</p>
+                <a href="mailto:itsarnav3546@gmail.com" class="hover-trigger hover:opacity-60 transition-opacity underline decoration-transparent hover:decoration-white">itsarnav3546@gmail.com ↗</a>
+            </div>
+             <div>
+                <p class="opacity-60 mb-1">Resume</p>
+                <a href="./cv1.pdf" target="_blank" class="hover-trigger hover:opacity-60 transition-opacity underline decoration-transparent hover:decoration-white">View Here ↗</a>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover-trigger hover:opacity-60 transition-opacity">About</a></li>
+                    <li><a href="#projects" class="hover-trigger hover:opacity-60 transition-opacity">Projects</a></li>
+                    <li><a href="#contact" class="hover-trigger hover:opacity-60 transition-opacity">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="h-screen flex flex-col justify-center px-6 pt-20 relative">
+            <div class="max-w-7xl mx-auto w-full z-10">
+                <h1 class="typo-header text-[15vw] md:text-[16vw] leading-none text-center md:text-left mix-blend-difference select-none">
+                    ARNAV
+                </h1>
+                <div class="flex flex-col md:flex-row justify-between items-end mt-4">
+                    <p class="text-lg md:text-xl max-w-md uppercase font-header font-bold opacity-80 mix-blend-difference">
+                        Frontend Developer & <br> CS Engineering Student
+                    </p>
+                </div>
+            </div>
+
+            <div class="absolute bottom-12 right-6 md:right-12 z-20 hover-trigger">
+                <div class="w-16 h-16 border border-white/30 rounded-full flex items-center justify-center animate-bounce">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 px-6 border-t border-accentGray/30 backdrop-blur-sm bg-bgDark/30">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="typo-header text-4xl md:text-6xl mb-16 mix-blend-difference">ABOUT</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="md:col-span-2">
+                        <p class="text-xl md:text-3xl font-header font-semibold mb-8 leading-tight mix-blend-difference">
+                            Creating intuitive and engaging digital experiences through clean code and modern design.
+                        </p>
+                        <div class="space-y-6 text-opacity-80 text-lg leading-relaxed font-light mix-blend-difference">
+                            <p>
+                                I'm Arnav, a Fresher Computer Science Engineering student at GGSIPU, New Delhi. 
+                                I am proficient in <strong>HTML, CSS, and JavaScript</strong>, with hands-on experience building responsive web pages.
+                            </p>
+                            <p>
+                                Currently learning React and seeking internship opportunities to learn, grow, and contribute in a professional environment.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 pt-8 md:pt-0 border-l border-white/10 pl-0 md:pl-8">
+                        <h3 class="text-sm uppercase tracking-wider opacity-60 mb-6 mix-blend-difference">Tech Stack</h3>
+                        <ul class="space-y-3 font-header font-bold text-xl mix-blend-difference">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js (Learning)</li>
+                            <li>Java (DSA) & C++</li>
+                            <li>Git & GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 px-6 border-t border-accentGray/30 bg-bgDark">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="typo-header text-4xl md:text-6xl mb-24 mix-blend-difference">WORKS</h2>
+                <div class="space-y-32">
+
+                    <div class="group relative grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                        <div class="md:col-span-2 order-2 md:order-1">
+                            <h3 class="text-3xl font-header font-bold mb-4 group-hover:text-purple-400 transition-colors mix-blend-difference">Sundown Studio Clone</h3>
+                            <p class="text-opacity-70 mb-6 leading-relaxed text-gray-400 mix-blend-difference">
+                                Developed a visually immersive frontend website replicating the modern Sundown Studio interface. Implemented complex UI animations and responsive layouts.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 text-xs uppercase tracking-wider opacity-60">
+                                <span class="border border-white/20 px-2 py-1 rounded">HTML</span>
+                                <span class="border border-white/20 px-2 py-1 rounded">CSS</span>
+                                <span class="border border-white/20 px-2 py-1 rounded">JS</span>
+                            </div>
+                            <a href="https://github.com/YOUR_USERNAME/REPO_NAME" target="_blank" class="hover-trigger inline-block border-b border-white pb-1 font-bold hover:text-purple-400 hover:border-purple-400 transition-all mix-blend-difference">View Code ↗</a>
+                        </div>
+                        <div class="md:col-span-3 order-1 md:order-2 aspect-video bg-gray-900 rounded-lg border border-accentGray/50 overflow-hidden hover-trigger">
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-black group-hover:scale-105 transition-transform duration-700">
+                                <span class="text-gray-500 font-header text-2xl">Sundown Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                        <div class="md:col-span-2 order-2 md:order-1">
+                            <h3 class="text-3xl font-header font-bold mb-4 group-hover:text-green-400 transition-colors mix-blend-difference">Snake Game</h3>
+                            <p class="text-opacity-70 mb-6 leading-relaxed text-gray-400 mix-blend-difference">
+                                Engineered a browser-based game implementing core logic for collision detection, score tracking, and game-state management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 text-xs uppercase tracking-wider opacity-60">
+                                <span class="border border-white/20 px-2 py-1 rounded">JavaScript</span>
+                                <span class="border border-white/20 px-2 py-1 rounded">DOM</span>
+                            </div>
+                            <a href="https://github.com/YOUR_USERNAME/REPO_NAME" target="_blank" class="hover-trigger inline-block border-b border-white pb-1 font-bold hover:text-green-400 hover:border-green-400 transition-all mix-blend-difference">View Code ↗</a>
+                        </div>
+                        <div class="md:col-span-3 order-1 md:order-2 aspect-video bg-gray-900 rounded-lg border border-accentGray/50 overflow-hidden hover-trigger">
+                             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-black group-hover:scale-105 transition-transform duration-700">
+                                <span class="text-gray-500 font-header text-2xl">Game Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                        <div class="md:col-span-2 order-2 md:order-1">
+                            <h3 class="text-3xl font-header font-bold mb-4 group-hover:text-blue-400 transition-colors mix-blend-difference">Form Validator</h3>
+                            <p class="text-opacity-70 mb-6 leading-relaxed text-gray-400 mix-blend-difference">
+                                Built a client-side validation system using logic to improve form usability and security with real-time feedback.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8 text-xs uppercase tracking-wider opacity-60">
+                                <span class="border border-white/20 px-2 py-1 rounded">RegEx</span>
+                                <span class="border border-white/20 px-2 py-1 rounded">JS</span>
+                            </div>
+                            <a href="https://github.com/YOUR_USERNAME/REPO_NAME" target="_blank" class="hover-trigger inline-block border-b border-white pb-1 font-bold hover:text-blue-400 hover:border-blue-400 transition-all mix-blend-difference">View Code ↗</a>
+                        </div>
+                        <div class="md:col-span-3 order-1 md:order-2 aspect-video bg-gray-900 rounded-lg border border-accentGray/50 overflow-hidden hover-trigger">
+                             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-black group-hover:scale-105 transition-transform duration-700">
+                                <span class="text-gray-500 font-header text-2xl">Validator Preview</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 px-6 border-t border-accentGray/30 mb-10 backdrop-blur-md bg-bgDark/60">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <p class="opacity-60 text-sm uppercase mb-4">Contact</p>
+                        <p class="font-bold text-lg"><a href="mailto:itsarnav3546@gmail.com" class="hover-trigger hover:text-purple-400 transition-colors">itsarnav3546@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="md:text-right">
+                        <p class="opacity-60 text-sm uppercase mb-4">Socials</p>
+                        <div class="flex flex-col space-y-2 md:items-end">
+                            <a href="#" target="_blank" class="hover-trigger hover:opacity-60 transition-opacity">LinkedIn ↗</a>
+                            <a href="#" target="_blank" class="hover-trigger hover:opacity-60 transition-opacity">X (Twitter) ↗</a>
+                            <a href="#" target="_blank" class="hover-trigger hover:opacity-60 transition-opacity">GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+                    
+                    <div class="w-full overflow-hidden">
+                        <h2 class="typo-header leading-[0.85] tracking-tighter uppercase break-words mix-blend-difference" style="font-size: clamp(3rem, 13vw, 12rem);">
+                            LET'S<br>CONNECT
+                        </h2>
+                    </div>
+
+                    <div class="w-full max-w-lg md:ml-auto">
+                        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="space-y-8">
+                            
+                            <div class="relative border-b border-white/30 focus-within:border-white transition-colors">
+                                <input type="text" name="name" id="name" placeholder=" " class="hover-trigger block w-full bg-transparent py-4 text-xl focus:outline-none peer text-white">
+                                <label for="name" class="absolute left-0 top-4 text-white/50 text-xl duration-300 transform -translate-y-8 scale-75 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:scale-75 pointer-events-none">Name</label>
+                            </div>
+
+                            <div class="relative border-b border-white/30 focus-within:border-white transition-colors">
+                                <input type="email" name="email" id="email" placeholder=" " class="hover-trigger block w-full bg-transparent py-4 text-xl focus:outline-none peer text-white">
+                                <label for="email" class="absolute left-0 top-4 text-white/50 text-xl duration-300 transform -translate-y-8 scale-75 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:scale-75 pointer-events-none">Email</label>
+                            </div>
+
+                             <div class="relative border-b border-white/30 focus-within:border-white transition-colors">
+                                <input type="tel" name="phone" id="phone" placeholder=" " class="hover-trigger block w-full bg-transparent py-4 text-xl focus:outline-none peer text-white">
+                                <label for="phone" class="absolute left-0 top-4 text-white/50 text-xl duration-300 transform -translate-y-8 scale-75 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:scale-75 pointer-events-none">Phone No</label>
+                            </div>
+
+                            <div class="relative border-b border-white/30 focus-within:border-white transition-colors">
+                                <textarea name="message" id="message" rows="4" placeholder=" " class="hover-trigger block w-full bg-transparent py-4 text-xl focus:outline-none peer resize-none text-white"></textarea>
+                                <label for="message" class="absolute left-0 top-4 text-white/50 text-xl duration-300 transform -translate-y-8 scale-75 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:scale-75 pointer-events-none">Message</label>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <button type="submit" class="hover-trigger px-10 py-3 bg-white text-bgDark font-bold uppercase tracking-wider rounded-full hover:bg-gray-200 transition-all transform hover:scale-105">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-6 border-t border-white/10 text-center opacity-50 text-sm font-light">
+            &copy; 2026 Arnav. All Rights Reserved.
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/PavelDoGreat/WebGL-Fluid-Simulation@master/script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
